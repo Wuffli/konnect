@@ -62,7 +62,7 @@ class Database:
 
   def unpairDevice(self, identifier):
     query = "DELETE FROM trusted_devices WHERE identifier = ?"
-    self.instance.execute(query, (identifier,))
+    self.instance.execute(query, (identifier))
 
   def persistNotification(self, identifier, text, title, application, reference):
     query = "INSERT INTO notifications (identifier, [text], title, application, reference) VALUES (?, ?, ?, ?, ?)" \
